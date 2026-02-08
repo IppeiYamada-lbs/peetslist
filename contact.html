@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Peetslist</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== CONTACT PAGE SPECIFIC ===== */
+    .page-hero {
+      padding: 140px 40px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .page-hero h1 {
+      font-family: var(--font-serif);
+      font-size: 56px;
+      font-weight: 400;
+      margin-bottom: 16px;
+    }
+
+    .talk-section {
+      padding: 40px 40px 60px;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .talk-section h2 {
+      font-family: var(--font-serif);
+      font-size: 36px;
+      font-weight: 400;
+      font-style: italic;
+      margin-bottom: 8px;
+      color: rgba(0,0,0,0.8);
+    }
+    .talk-section .sub {
+      font-size: 16px;
+      font-style: italic;
+      color: var(--gray-text);
+      margin-bottom: 40px;
+    }
+
+    /* Contact Form */
+    .contact-form-section {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 40px 60px;
+    }
+    .contact-form .form-row {
+      margin-bottom: 20px;
+    }
+    .contact-form .form-row.half {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .contact-form label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--black);
+      margin-bottom: 6px;
+    }
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid #ccc;
+      font-size: 15px;
+      font-family: var(--font-sans);
+      background: var(--white);
+      transition: border-color 0.2s;
+    }
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--black);
+    }
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    .consent-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin: 24px 0;
+    }
+    .consent-row input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      accent-color: var(--black);
+    }
+    .consent-row label {
+      font-size: 13px;
+      color: var(--gray-text);
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: 0;
+      line-height: 1.5;
+    }
+    .consent-note {
+      font-size: 12px;
+      color: var(--gray-text);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .submit-btn {
+      display: inline-block;
+      padding: 14px 48px;
+      background: var(--yellow);
+      color: var(--black);
+      border: none;
+      font-size: 16px;
+      font-weight: 700;
+      font-family: var(--font-sans);
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .submit-btn:hover { opacity: 0.85; }
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 60px 24px;
+    }
+    .form-success h3 {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+    .form-success p {
+      font-size: 15px;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    /* Other Inquiries */
+    .other-inquiries {
+      padding: 60px 40px;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .other-inquiries h2 {
+      font-family: var(--font-serif);
+      font-size: 36px;
+      font-weight: 400;
+      font-style: italic;
+      margin-bottom: 40px;
+      color: rgba(0,0,0,0.8);
+    }
+
+    /* Location */
+    .location-section {
+      padding: 60px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .location-inner {
+      background: var(--gray-light);
+      padding: 50px;
+    }
+    .location-inner h2 {
+      font-family: var(--font-serif);
+      font-size: 36px;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+    .location-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: 30px;
+    }
+    .location-item h3 {
+      font-family: var(--font-sans);
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .location-item p {
+      font-size: 14px;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .page-hero { padding: 120px 20px 30px; }
+      .page-hero h1 { font-size: 36px; }
+      .talk-section { padding: 20px 20px 40px; }
+      .contact-form-section { padding: 0 20px 40px; }
+      .contact-form .form-row.half { grid-template-columns: 1fr; }
+      .location-inner { padding: 30px; }
+      .location-grid { grid-template-columns: 1fr; gap: 24px; }
+      .other-inquiries { padding: 40px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo">Peetslist</a>
+    <nav class="header-nav">
+      <a href="contact.html" class="btn-talk">Talk with us</a>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <h1>Contact</h1>
+  </section>
+
+  <!-- Talk With Us -->
+  <section class="talk-section">
+    <h2>– Talk with us –</h2>
+    <p class="sub">Or just request a brochure</p>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="contact-form-section">
+    <div id="contactFormContent">
+      <form class="contact-form" id="contactForm" onsubmit="handleContactSubmit(event)">
+        <div class="form-row half">
+          <div>
+            <label for="firstName">First Name *</label>
+            <input type="text" id="firstName" name="first_name" required placeholder="First name">
+          </div>
+          <div>
+            <label for="lastName">Last Name *</label>
+            <input type="text" id="lastName" name="last_name" required placeholder="Last name">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required placeholder="you@company.com">
+        </div>
+
+        <div class="form-row">
+          <label for="company">Company *</label>
+          <input type="text" id="company" name="company" required placeholder="Company name">
+        </div>
+
+        <div class="form-row">
+          <label for="inquiry">Inquiry Type</label>
+          <select id="inquiry" name="inquiry">
+            <option value="" disabled selected>Select inquiry type</option>
+            <option value="project">Project inquiry</option>
+            <option value="brochure">Request a brochure</option>
+            <option value="partnership">Partnership</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" required placeholder="Tell us about your project or question"></textarea>
+        </div>
+
+        <div class="consent-row">
+          <input type="checkbox" id="consent" required>
+          <label for="consent">I agree to allow Peetslist to store and process my personal data.</label>
+        </div>
+
+        <p class="consent-note">You can unsubscribe from these communications at any time. For more information on how to unsubscribe, our privacy practices, and how we are committed to protecting and respecting your privacy, please review our Privacy Policy.</p>
+
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
+
+    <div class="form-success" id="formSuccess">
+      <h3>Message Sent</h3>
+      <p>Thank you for reaching out. We'll get back to you within 2 business days.</p>
+    </div>
+  </section>
+
+  <!-- Other Inquiries -->
+  <section class="other-inquiries">
+    <h2>– Other Inquiries –</h2>
+  </section>
+
+  <!-- Join / Partner Section -->
+  <section class="join-partner">
+    <div class="join-partner-inner">
+      <div class="join-side">
+        <h2 class="italic-heading">– Join us –</h2>
+        <a href="careers.html" class="btn-outline">More about career</a>
+      </div>
+      <div class="divider-vertical"></div>
+      <div class="partner-side">
+        <h2 class="italic-heading">– Partner with us –</h2>
+        <a href="mailto:contact@peetslist.me" class="partner-email">contact@peetslist.me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location -->
+  <section class="location-section">
+    <div class="location-inner">
+      <h2>Location</h2>
+      <div class="divider"></div>
+      <div class="location-grid">
+        <div class="location-item">
+          <h3>London</h3>
+          <p>3rd Floor, News, 3 London Brg, London SE1 9SG</p>
+        </div>
+        <div class="location-item">
+          <h3>TOKYO</h3>
+          <p>4F, Hiroo 5 Chome-4-12, Shibuya, Tokyo 150-0012</p>
+        </div>
+        <div class="location-item">
+          <h3>Nairobi</h3>
+          <p>Purshottam Place, Westlands Road, Museum Hill</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>Peetslist</h3>
+        <p>Strategy & Prototyping studio</p>
+      </div>
+      <div class="footer-col">
+        <h4>Location</h4>
+        <ul>
+          <li>London</li>
+          <li>Tokyo</li>
+          <li>Nairobi</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>About us</h4>
+        <ul>
+          <li><a href="service.html">What we do</a></li>
+          <li><a href="casestudy.html">Case study</a></li>
+          <li><a href="bigquestions.html">White paper</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Career</h4>
+        <ul>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  function handleContactSubmit(e) {
+    e.preventDefault();
+    var form = e.target;
+    var data = new FormData(form);
+    var subject = encodeURIComponent('Contact Inquiry: ' + data.get('first_name') + ' ' + data.get('last_name') + ' - ' + (data.get('inquiry') || 'General'));
+    var body = encodeURIComponent(
+      'CONTACT INQUIRY\n================================\n\n' +
+      'Name: ' + data.get('first_name') + ' ' + data.get('last_name') + '\n' +
+      'Email: ' + data.get('email') + '\n' +
+      'Company: ' + data.get('company') + '\n' +
+      'Inquiry Type: ' + (data.get('inquiry') || 'Not specified') + '\n' +
+      'Message: ' + data.get('message') + '\n' +
+      'Submitted: ' + new Date().toISOString() + '\n'
+    );
+    window.location.href = 'mailto:contact@peetslist.me?subject=' + subject + '&body=' + body;
+    document.getElementById('contactFormContent').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }
+  </script>
+</body>
+</html>

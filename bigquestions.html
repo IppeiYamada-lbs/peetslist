@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>White Paper — Peetslist</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== WHITE PAPER PAGE SPECIFIC ===== */
+    .page-hero {
+      padding: 140px 40px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .page-hero h1 {
+      font-family: var(--font-serif);
+      font-size: 56px;
+      font-weight: 400;
+      margin-bottom: 16px;
+    }
+    .page-hero .subtitle {
+      font-size: 18px;
+      font-style: italic;
+      color: #333;
+    }
+
+    .wp-intro {
+      padding: 20px 40px 60px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .wp-intro p {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      line-height: 1.6;
+      color: var(--black);
+    }
+
+    /* Paper Cards */
+    .wp-list {
+      padding: 0 40px 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .wp-card {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 60px;
+      cursor: pointer;
+    }
+    .wp-card img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .wp-card:hover img {
+      transform: scale(1.03);
+    }
+    .wp-card-content {
+      position: absolute;
+      top: 50%;
+      left: 40px;
+      transform: translateY(-50%);
+      background: var(--white);
+      padding: 40px 50px;
+      max-width: 520px;
+      z-index: 2;
+    }
+    .wp-card-content h2 {
+      font-family: var(--font-serif);
+      font-size: 32px;
+      font-weight: 400;
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+    .wp-card-content p {
+      font-size: 15px;
+      color: #333;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .page-hero { padding: 120px 20px 30px; }
+      .page-hero h1 { font-size: 36px; }
+      .wp-intro { padding: 10px 20px 40px; }
+      .wp-intro p { font-size: 18px; }
+      .wp-list { padding: 0 20px 40px; }
+      .wp-card img { height: 300px; }
+      .wp-card-content {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        max-width: 100%;
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo">Peetslist</a>
+    <nav class="header-nav">
+      <a href="contact.html" class="btn-talk">Talk with us</a>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <h1>White paper</h1>
+    <p class="subtitle">These are the uncertainties we obsess over.</p>
+  </section>
+
+  <!-- Intro -->
+  <section class="wp-intro">
+    <p>We use structure thinking, design and technology to prototype answers to some of the world's most pressing questions.</p>
+  </section>
+
+  <!-- White Paper Cards -->
+  <section class="wp-list">
+
+    <div class="wp-card">
+      <img src="images/whitepaper.png" alt="Attention Economy and Will Power Crisis">
+      <div class="wp-card-content">
+        <h2>Attention Economy and Will Power Crisis</h2>
+        <p>We analyze the attention economy—its root causes, consequences, and potential solutions.</p>
+        <a href="#" class="btn-outline">Read</a>
+      </div>
+    </div>
+
+    <div class="wp-card">
+      <img src="images/hero.jpg" alt="Powering Africa's Next Billion Diners">
+      <div class="wp-card-content">
+        <h2>Powering Africa's Next Billion Diners</h2>
+        <p>Empowering restaurants across Africa with smarter tools to grow revenue and delight customers.</p>
+        <a href="#" class="btn-outline">Read</a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Join / Partner Section -->
+  <section class="join-partner">
+    <div class="join-partner-inner">
+      <div class="join-side">
+        <h2 class="italic-heading">– Join us –</h2>
+        <a href="careers.html" class="btn-outline">More about career</a>
+      </div>
+      <div class="divider-vertical"></div>
+      <div class="partner-side">
+        <h2 class="italic-heading">– Partner with us –</h2>
+        <a href="mailto:contact@peetslist.me" class="partner-email">contact@peetslist.me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>Peetslist</h3>
+        <p>Strategy & Prototyping studio</p>
+      </div>
+      <div class="footer-col">
+        <h4>Location</h4>
+        <ul>
+          <li>London</li>
+          <li>Tokyo</li>
+          <li>Nairobi</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>About us</h4>
+        <ul>
+          <li><a href="service.html">What we do</a></li>
+          <li><a href="casestudy.html">Case study</a></li>
+          <li><a href="bigquestions.html">White paper</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Career</h4>
+        <ul>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
